@@ -12,11 +12,13 @@ import FormValidation from './components/Validation';
 const routes = [
   {
     path: "/",
+    id:1,
     exact: true,
     main: () => <MyTable/>
   },
   {
     path: "/validation",
+    id:2,
     exact: true,
     main: () => <FormValidation/>
   },
@@ -35,9 +37,9 @@ export default function App() {
             </Button>
         </div>
           <Switch>
-            {routes.map((route, index) => (
+            {routes.map((route) => (
               <Route
-                key={index}
+                key={route.id}
                 path={route.path}
                 exact={route.exact}
                 children={<route.main />}
