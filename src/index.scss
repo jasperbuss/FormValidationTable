@@ -1,0 +1,8 @@
+@mixin test {
+       display: flex; 
+}
+header{
+    @include test();
+    color:white;
+    
+}
