@@ -11,7 +11,7 @@ import TableSortLabel from '@material-ui/core/TableSortLabel';
 import Paper from '@material-ui/core/Paper';
 import useStyles from './styles';
 import {Order} from '../types/order';
-import { stableSort, getComparator} from '../utils/sortUtils';
+import {stableSort, getComparator} from '../utils/sortUtils';
 export interface TableData {
   id: number;
   location: string;
@@ -73,8 +73,9 @@ export interface ITableProps {
   orderBy: string;
 }
 
-function THeader(props: ITableProps) {
-  const {classes, order, orderBy, onRequestSort} = props;
+function TableHeader(props: ITableProps) {
+  const { order, orderBy, onRequestSort} = props;
+
   const createSortHandler = (property: keyof TableData) => (
     event: React.MouseEvent<unknown>
   ) => {
@@ -97,11 +98,6 @@ function THeader(props: ITableProps) {
               onClick={createSortHandler(headCell.id)}
             >
               {headCell.label}
-              {orderBy === headCell.id ? (
-                <span className={classes.visuallyHidden}>
-                  {order === 'desc' ? 'sorted descending' : 'sorted ascending'}
-                </span>
-              ) : null}
             </TableSortLabel>
           </TableCell>
         ))}
@@ -153,7 +149,7 @@ export default function EnhancedTable() {
             size={'small'}
             aria-label="datatable"
           >
-            <THeader
+            <TableHeader
               classes={classes}
               order={order}
               orderBy={orderBy}
