@@ -1,4 +1,4 @@
-export const myData = [
+export const testData = [
     {"id":0,"location":"Varniţa","type":"freezer","device_health":"broken","last_used":"10/10/2018","price":"79.00","color":"#541738"},
     {"id":1,"location":"Lobanovo","type":"cycler","device_health":"good","last_used":"01/31/2019","price":"46.00","color":"#1d3b57"},
     {"id":2,"location":"Mhāsvād","type":"shaker","device_health":"ok","last_used":"03/25/2019","price":"68.00","color":"#216855"},

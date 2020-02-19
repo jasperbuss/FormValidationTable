@@ -9,6 +9,7 @@ import MyTable from './components/ListComponent';
 import { Button } from "@material-ui/core";
 import useStyles from './styles';
 import FormValidation from './components/Validation';
+
 const routes = [
   {
     path: "/",
@@ -28,11 +29,11 @@ export default function App() {
  const classes = useStyles();
   return (
     <Router>
-      <div style={{ display: "flex" }}>
+      <div className={classes.root}>
             <Button className={classes.btnStyles} >
               <Link className={classes.linkStyles} to="/">Table</Link>
             </Button>
-            <Button style={{background:"darkgrey"}}>
+            <Button >
               <Link className={classes.linkStyles} to="/validation">Validation</Link>
             </Button>
         </div>
