@@ -11,6 +11,9 @@ const useStyles = makeStyles((theme:Theme) => ({
   },
 inputStyle:{
    width:"fit-content"
+},
+errors:{
+  color:"red"
 }
 })
 );

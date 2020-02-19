@@ -6,7 +6,7 @@ import CardContent from '@material-ui/core/CardContent';
 export const FormValidation: React.FC = () => {
   const {register, handleSubmit, errors} = useForm();
   const onSubmit = (data: React.DOMAttributes<HTMLFormElement>) =>
-    alert('Form submitted');
+    alert(`Form submitted`);
   const classes = useStyles();
   return (
     <Card className={classes.root}>
@@ -20,7 +20,7 @@ export const FormValidation: React.FC = () => {
               ref={register({required: true, minLength: 2})}
             />
             <br />
-            <span style={{color: 'red'}}>
+            <span className={classes.errors}>
               {errors.Name && 'At least 2 characters'}
             </span>
           </div>
@@ -36,7 +36,7 @@ export const FormValidation: React.FC = () => {
               })}
             />
             <br />
-            <span>{errors.Email && 'Enter a valid email address'}</span>
+            <span className={classes.errors}>{errors.Email && 'Enter a valid email address'}</span>
             <br />
           </div>
           Password
@@ -50,7 +50,7 @@ export const FormValidation: React.FC = () => {
               })}
             />
             <br />
-            <span>
+            <span className={classes.errors}>
               {errors.Password &&
                 'At least: 8 chars, one of: [!@#$%^&*] & [0-9] & [A-Z]'}
             </span>
